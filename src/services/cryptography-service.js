@@ -1,31 +1,15 @@
 const crypto = require('crypto')
 
 class CryptographyService {
-    static buildConfig() {
-        const initVector = crypto.randomBytes(16)
-        const encryptationType = 'aes-256-cbc'
+    static decrypt(encryptedMessage) {
+        const dataArray = encryptedMessage.split(':')
+        const decipher = crypto.createDecipheriv('aes-256-cbc', process.env.AES_256_KEY, Buffer.from(dataArray[0], 'hex'))
 
-        return [encryptationType, process.env.AES_256_KEY, initVector]
-    }
+        let decrypted = decipher.update(dataArray[1], 'hex', 'utf8')
 
-    static encrypt(data) {
-        const cipher = crypto.createCipheriv(...CryptographyService.buildConfig())
+        decrypted += decipher.final('utf8')
 
-        let encryptedData = cipher.update(data, "utf-8", "hex")
-            
-        encryptedData += cipher.final("hex")
-            
-        return encryptedData
-    }
-
-    static decrypt(data) {
-        const decipher = crypto.createDecipheriv(...CryptographyService.buildConfig())
-
-        let decryptedData = decipher.update(data, "hex", "utf-8")
-
-        decryptedData += decipher.final("utf8")
-
-        return decryptedData
+        return decrypted
     }
 }
 
