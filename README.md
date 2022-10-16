@@ -45,12 +45,11 @@ Create .env file inside env folder from project base path and set with your own 
 
 > Message pattern
 
-```json
-{
-	"receiver": "email@email.com",
-	"message": "hello dear friend!",
-	"subject": "a letter to a friend"
-}```
+    {
+    	"receiver": "email@email.com",
+    	"message": "hello dear friend!",
+    	"subject": "a letter to a friend"
+    }
 
 > Running tests
 
