@@ -43,9 +43,20 @@ Create .env file inside env folder from project base path and set with your own 
 
 `$ npm start`
 
+> Message pattern
+
+```json
+{
+	"receiver": "email@email.com",
+	"message": "hello dear friend!",
+	"subject": "a letter to a friend"
+}```
+
 > Running tests
 
 `$ npm test`
+
+
 
 ### Links
 
