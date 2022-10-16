@@ -28,11 +28,11 @@ class Ampq {
         await this.channel.consume(this.queue, async message => {
             const encryptedData = message.content.toString()
 
-            const decryptedData = CryptographyService.decrypt(message)
+            const decryptedData = CryptographyService.decrypt(encryptedData)
 
             console.log('Message received')
 
-            await processFn(result)
+            await processFn(decryptedData)
         }, { noAck: true })
     }
 }
