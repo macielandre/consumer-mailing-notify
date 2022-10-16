@@ -24,6 +24,7 @@
     "nodemon": "^2.0.20"
   },
   "dependencies": {
+    "amqplib": "^0.10.3",
     "crypto": "^1.0.1",
     "dotenv": "^16.0.3",
     "nodemailer": "^6.8.0",
