@@ -20,9 +20,7 @@ class MailService {
             to: receiver,
         })
 
-        console.log('Mail sent')
-
-        console.log(`Url: ${nodemailer.getTestMessageUrl(info)}`)
+        return info
     }
 }
 
