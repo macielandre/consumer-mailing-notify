@@ -12,8 +12,8 @@ Consume an input message and send to any email address.
 
 ### Corelated links
 
-Bigger project: https://github.com/users/macielandre/projects/3
-Project that publish for this queue: https://github.com/macielandre/api-gateway-notifier
+- Bigger project: https://github.com/users/macielandre/projects/3
+- Project that publish for this queue: https://github.com/macielandre/api-gateway-notifier
 
 ### Installation
 
