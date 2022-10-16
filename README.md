@@ -56,8 +56,6 @@ Create .env file inside env folder from project base path and set with your own 
 
 `$ npm test`
 
-
-
 ### Links
 
 [Linkedin](https://www.linkedin.com/in/andregouveamaciel/)
