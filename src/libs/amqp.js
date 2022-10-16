@@ -1,8 +1,9 @@
 require('dotenv').config({ path: 'env/.env' })
 
 const amqp = require('amqplib')
+const CryptographyService = require('../services/cryptography-service')
 
-class Rabbitmq {
+class Ampq {
     constructor(uri, queue) {
         this.connection
         this.uri = uri
@@ -25,7 +26,9 @@ class Rabbitmq {
 
     async receive(processFn) {
         await this.channel.consume(this.queue, async message => {
-            const result = message.content.toString()
+            const encryptedData = message.content.toString()
+
+            const decryptedData = CryptographyService.decrypt(message)
 
             console.log('Message received')
 
@@ -34,4 +37,4 @@ class Rabbitmq {
     }
 }
 
-module.exports = Rabbitmq
+module.exports = Ampq
