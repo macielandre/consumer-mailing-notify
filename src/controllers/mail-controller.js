@@ -3,6 +3,7 @@ const InputMessageValidation = require("../validations/input-message-validation"
 const MailService = require("../services/mail-service")
 
 class EmailController {
+    
     static async processMailMessages(consumedMessage) {
         try {
             const messageObject = JSON.parse(consumedMessage)

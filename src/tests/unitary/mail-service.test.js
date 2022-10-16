@@ -1,10 +1,12 @@
 const MailService = require("../../services/mail-service")
 
 describe('mail service tests', () => {
-    test('should create nodemailer client', async () => {
-        const client = new MailService()
-    
-        expect(client).toBeInstanceOf(MailService)
+    describe('mail service constructor tests', () => {
+        test('should create nodemailer client', () => {
+            const client = new MailService()
+        
+            expect(client).toBeInstanceOf(MailService)
+        })
     })
     
     test('should send mail', async () => {
